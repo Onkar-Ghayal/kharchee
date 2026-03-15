@@ -1,0 +1,841 @@
+/* =====================================================
+   KHARCHEE - AUTH.CSS
+   Professional Login/Register Pages
+   Fixed: Light Mode Visibility, Dark Mode Contrast, Mobile View
+===================================================== */
+
+/* -------------------- CSS VARIABLES (inherit from common) -------------------- */
+:root {
+    --purple-50: #faf5ff;
+    --purple-100: #f3e8ff;
+    --purple-200: #e9d5ff;
+    --purple-300: #d8b4fe;
+    --purple-400: #c084fc;
+    --purple-500: #a855f7;
+    --purple-600: #9333ea;
+    --purple-700: #7e22ce;
+    --purple-800: #6b21a5;
+    --purple-900: #581c87;
+    
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --text-tertiary: #6b7280;
+    --text-placeholder: #9ca3af;
+    
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    --bg-tertiary: #f3f4f6;
+    --bg-card: #ffffff;
+    --bg-input: #ffffff;
+    
+    --border-light: #e5e7eb;
+    --border-focus: var(--purple-500);
+    
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    
+    --accent-primary: var(--purple-600);
+    --accent-hover: var(--purple-700);
+    --accent-light: var(--purple-100);
+    
+    --success: #10b981;
+    --success-bg: #d1fae5;
+    --danger: #ef4444;
+    --danger-bg: #fee2e2;
+    --warning: #f59e0b;
+    --warning-bg: #fef3c7;
+    
+    /* Spacing */
+    --space-xs: 0.375rem;  /* 6px */
+    --space-sm: 0.75rem;    /* 12px */
+    --space-md: 1rem;       /* 16px */
+    --space-lg: 1.5rem;     /* 24px */
+    --space-xl: 2rem;       /* 32px */
+    --space-2xl: 3rem;      /* 48px */
+    
+    /* Typography */
+    --text-xs: 0.75rem;     /* 12px */
+    --text-sm: 0.875rem;    /* 14px */
+    --text-base: 1rem;      /* 16px */
+    --text-lg: 1.125rem;    /* 18px */
+    --text-xl: 1.25rem;     /* 20px */
+    --text-2xl: 1.5rem;     /* 24px */
+    
+    /* Border Radius */
+    --radius-sm: 0.375rem;  /* 6px */
+    --radius-md: 0.5rem;    /* 8px */
+    --radius-lg: 0.75rem;   /* 12px */
+    --radius-xl: 1rem;      /* 16px */
+    --radius-full: 9999px;
+    
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 350ms ease;
+}
+
+/* -------------------- DARK MODE VARIABLES -------------------- */
+.dark-mode {
+    --text-primary: #f9fafb;
+    --text-secondary: #e5e7eb;
+    --text-tertiary: #d1d5db;
+    --text-placeholder: #9ca3af;
+    
+    --bg-primary: #111827;
+    --bg-secondary: #1f2937;
+    --bg-tertiary: #374151;
+    --bg-card: #1f2937;
+    --bg-input: #1f2937;
+    
+    --border-light: #374151;
+    --border-focus: var(--purple-400);
+    
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    
+    --accent-primary: var(--purple-400);
+    --accent-hover: var(--purple-300);
+    --accent-light: var(--purple-900);
+    
+    --success-bg: #065f46;
+    --danger-bg: #7f1d1d;
+    --warning-bg: #92400e;
+}
+
+/* -------------------- AUTH SECTION -------------------- */
+.auth-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+    position: relative;
+}
+
+/* -------------------- AUTH CARD -------------------- */
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-xl);
+    animation: slideUp var(--transition-slow);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+}
+
+/* Purple accent line at top */
+.auth-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--purple-400), var(--purple-600));
+}
+
+.auth-card h2 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.sub-text {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-xl);
+    line-height: 1.5;
+}
+
+/* -------------------- FORM STYLES -------------------- */
+#loginForm,
+#registerForm {
+    margin-top: var(--space-md);
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: var(--space-lg);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-size: var(--text-base);
+    background: var(--bg-input);
+    color: var(--text-primary);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+    height: 3rem;
+    box-sizing: border-box;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.form-group input::placeholder {
+    color: var(--text-placeholder);
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 4px var(--accent-light);
+    background: var(--bg-input);
+}
+
+/* Input icons (optional) */
+.input-icon {
+    position: relative;
+}
+
+.input-icon input {
+    padding-left: 2.75rem;
+}
+
+.input-icon i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-tertiary);
+    font-size: 1.25rem;
+    font-style: normal;
+}
+
+/* Password strength indicator (for register) */
+.password-strength {
+    height: 4px;
+    background: var(--border-light);
+    border-radius: var(--radius-full);
+    margin-top: var(--space-xs);
+    overflow: hidden;
+}
+
+.password-strength-bar {
+    height: 100%;
+    width: 0;
+    transition: width var(--transition-base);
+}
+
+.password-strength-bar.weak {
+    width: 33.33%;
+    background: var(--danger);
+}
+
+.password-strength-bar.medium {
+    width: 66.66%;
+    background: var(--warning);
+}
+
+.password-strength-bar.strong {
+    width: 100%;
+    background: var(--success);
+}
+
+/* -------------------- BUTTONS -------------------- */
+.btn-submit {
+    width: 100%;
+    padding: 0.875rem;
+    background: var(--accent-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 12px rgba(147, 51, 234, 0.3);
+    min-height: 3rem;
+    margin-top: var(--space-xl);
+    letter-spacing: 0.3px;
+}
+
+.btn-submit:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(147, 51, 234, 0.4);
+}
+
+.btn-submit:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 2px 8px rgba(147, 51, 234, 0.3);
+}
+
+/* Dark mode button */
+.dark-mode .btn-submit {
+    box-shadow: 0 4px 12px rgba(192, 132, 252, 0.3);
+}
+
+.dark-mode .btn-submit:hover {
+    box-shadow: 0 8px 18px rgba(192, 132, 252, 0.4);
+}
+
+/* -------------------- SWITCH LINK -------------------- */
+.switch-link {
+    text-align: center;
+    margin-top: var(--space-xl);
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border-light);
+}
+
+.switch-link a {
+    color: var(--accent-primary);
+    font-weight: 600;
+    margin-left: var(--space-xs);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.switch-link a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+/* -------------------- FORM VALIDATION STYLES -------------------- */
+.form-error {
+    color: var(--danger);
+    font-size: var(--text-sm);
+    margin-top: var(--space-xs);
+    min-height: 1.25rem;
+    font-weight: 500;
+}
+
+.form-group input.error {
+    border-color: var(--danger);
+    background: var(--danger-bg);
+}
+
+.form-group input.success {
+    border-color: var(--success);
+    background: var(--success-bg);
+}
+
+/* Shake animation for errors */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.form-error.shake {
+    animation: shake 0.5s ease;
+}
+
+/* -------------------- LOADING STATE -------------------- */
+.btn-submit.loading {
+    position: relative;
+    color: transparent;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.btn-submit.loading::after {
+    content: '';
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid white;
+    border-radius: var(--radius-full);
+    border-top-color: transparent;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* -------------------- SOCIAL LOGIN (OPTIONAL) -------------------- */
+.social-login {
+    margin-top: var(--space-xl);
+    text-align: center;
+}
+
+.social-login p {
+    position: relative;
+    color: var(--text-tertiary);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-lg);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.social-login p::before,
+.social-login p::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 35%;
+    height: 1px;
+    background: var(--border-light);
+}
+
+.social-login p::before {
+    left: 0;
+}
+
+.social-login p::after {
+    right: 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+}
+
+.social-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: var(--radius-full);
+    background: var(--bg-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    background: var(--accent-light);
+    border-color: var(--accent-primary);
+    box-shadow: var(--shadow-md);
+}
+
+.dark-mode .social-icon:hover {
+    background: var(--accent-primary);
+    color: white;
+}
+
+/* ================= MOBILE OPTIMIZATIONS (below 768px) ================= */
+@media (max-width: 768px) {
+    .auth-section {
+        padding: 0;
+        min-height: 100vh;
+        align-items: flex-start;
+        background: var(--bg-primary);
+    }
+
+    .auth-card {
+        max-width: 100%;
+        margin: 0;
+        border-radius: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: var(--space-xl) var(--space-lg);
+        box-shadow: none;
+        border: none;
+        animation: fadeIn var(--transition-slow);
+    }
+
+    .auth-card::before {
+        height: 6px;
+        background: linear-gradient(90deg, var(--purple-400), var(--purple-600));
+    }
+
+    .auth-card h2 {
+        font-size: var(--text-xl);
+        margin-bottom: var(--space-xs);
+    }
+
+    .sub-text {
+        font-size: var(--text-sm);
+        margin-bottom: var(--space-lg);
+        color: var(--text-secondary);
+    }
+
+    /* Form adjustments for mobile */
+    .form-group {
+        margin-bottom: var(--space-md);
+    }
+
+    .form-group label {
+        font-size: var(--text-sm);
+        margin-bottom: var(--space-xs);
+        color: var(--text-primary);
+        font-weight: 600;
+    }
+
+    .form-group input {
+        padding: 0.875rem 1rem;
+        font-size: 16px; /* Prevents zoom on iOS */
+        height: 3rem;
+        background: var(--bg-input);
+        border: 2px solid var(--border-light);
+        border-radius: var(--radius-lg);
+        color: var(--text-primary);
+    }
+
+    .form-group input::placeholder {
+        color: var(--text-placeholder);
+        font-size: var(--text-sm);
+    }
+
+    .form-group input:focus {
+        border-color: var(--accent-primary);
+        box-shadow: 0 0 0 3px var(--accent-light);
+    }
+
+    /* Submit button on mobile */
+    .btn-submit {
+        margin-top: var(--space-xl);
+        height: 3.25rem;
+        font-size: 1rem;
+        border-radius: var(--radius-lg);
+        box-shadow: 0 4px 12px rgba(147, 51, 234, 0.3);
+        position: sticky;
+        bottom: var(--space-lg);
+        background: var(--accent-primary);
+    }
+
+    .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(147, 51, 234, 0.4);
+    }
+
+    .btn-submit:active {
+        transform: scale(0.98);
+    }
+
+    /* Switch link on mobile */
+    .switch-link {
+        margin-top: var(--space-xl);
+        padding-top: var(--space-lg);
+        font-size: var(--text-sm);
+        border-top: 1px solid var(--border-light);
+    }
+
+    .switch-link a {
+        color: var(--accent-primary);
+        font-weight: 600;
+    }
+
+    /* Social login on mobile */
+    .social-login {
+        margin-top: var(--space-lg);
+    }
+
+    .social-login p {
+        font-size: var(--text-xs);
+        color: var(--text-tertiary);
+    }
+
+    .social-login p::before,
+    .social-login p::after {
+        width: 30%;
+    }
+
+    .social-icon {
+        width: 2.75rem;
+        height: 2.75rem;
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border-light);
+    }
+
+    .social-icon:hover {
+        transform: translateY(-2px);
+        background: var(--accent-light);
+    }
+
+    /* Dark mode mobile adjustments */
+    .dark-mode .auth-section {
+        background: var(--bg-primary);
+    }
+
+    .dark-mode .auth-card {
+        background: var(--bg-card);
+    }
+
+    .dark-mode .form-group input {
+        background: var(--bg-input);
+        border-color: var(--border-light);
+        color: var(--text-primary);
+    }
+
+    .dark-mode .form-group input:focus {
+        border-color: var(--accent-primary);
+        box-shadow: 0 0 0 3px rgba(192, 132, 252, 0.2);
+    }
+
+    .dark-mode .btn-submit {
+        background: var(--accent-primary);
+        box-shadow: 0 4px 12px rgba(192, 132, 252, 0.3);
+    }
+
+    .dark-mode .btn-submit:hover {
+        box-shadow: 0 8px 18px rgba(192, 132, 252, 0.4);
+    }
+}
+
+/* ================= EXTRA SMALL DEVICES (below 380px) ================= */
+@media (max-width: 380px) {
+    .auth-card {
+        padding: var(--space-lg) var(--space-md);
+    }
+
+    .auth-card h2 {
+        font-size: var(--text-lg);
+    }
+
+    .form-group input {
+        padding: 0.75rem;
+        font-size: 14px;
+    }
+
+    .btn-submit {
+        height: 3rem;
+        font-size: 0.95rem;
+    }
+
+    .social-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+/* ================= TABLET OPTIMIZATIONS (768px - 1024px) ================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .auth-section {
+        padding: var(--space-xl);
+    }
+
+    .auth-card {
+        max-width: 480px;
+        padding: var(--space-xl);
+    }
+
+    .auth-card h2 {
+        font-size: 2rem;
+    }
+
+    .sub-text {
+        font-size: var(--text-base);
+    }
+
+    .form-group input {
+        height: 3.25rem;
+    }
+
+    .btn-submit {
+        height: 3.25rem;
+    }
+}
+
+/* ================= DARK MODE SPECIFIC ================= */
+.dark-mode .auth-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .form-group label {
+    color: var(--text-primary);
+}
+
+.dark-mode .form-group input {
+    background: var(--bg-input);
+    border-color: var(--border-light);
+    color: var(--text-primary);
+}
+
+.dark-mode .form-group input:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(192, 132, 252, 0.2);
+}
+
+.dark-mode .form-group input::placeholder {
+    color: var(--text-placeholder);
+}
+
+.dark-mode .switch-link {
+    border-top-color: var(--border-light);
+}
+
+.dark-mode .switch-link a {
+    color: var(--accent-primary);
+}
+
+.dark-mode .switch-link a:hover {
+    color: var(--accent-hover);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ================= ACCESSIBILITY ================= */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+/* Remove focus outline for mouse users */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Better tap experience on mobile */
+button,
+input,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+/* =====================================================
+   🚀 PREMIUM AUTH ENHANCEMENTS (APPEND ONLY)
+   Safe – No Existing Code Modified
+===================================================== */
+
+/* ---------- Smooth Page Entry ---------- */
+.auth-section {
+    animation: authFade 0.4s ease;
+}
+
+@keyframes authFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ---------- Glass Depth Effect (Subtle & Professional) ---------- */
+.auth-card {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Slight hover lift on desktop */
+@media (hover:hover) {
+    .auth-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.15);
+    }
+
+    .dark-mode .auth-card:hover {
+        box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+    }
+}
+
+/* ---------- Input Focus Enhancement ---------- */
+.form-group input:focus {
+    transform: translateY(-1px);
+}
+
+/* ---------- Floating Button Feel ---------- */
+@media (hover:hover) {
+    .btn-submit:hover {
+        letter-spacing: 0.4px;
+    }
+}
+
+/* ---------- Professional Divider Animation ---------- */
+.switch-link {
+    position: relative;
+}
+
+.switch-link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--accent-primary);
+    border-radius: 999px;
+    opacity: 0.4;
+}
+
+/* ---------- Better Error Animation ---------- */
+.form-error {
+    transition: all 0.2s ease;
+}
+
+/* ---------- Subtle Gradient Background Upgrade (Light Mode Only) ---------- */
+body:not(.dark-mode) .auth-section {
+    background: linear-gradient(
+        135deg,
+        #f3f4f9 0%,
+        #eef2ff 100%
+    );
+}
+
+/* ---------- Dark Mode Depth Boost ---------- */
+.dark-mode .auth-card {
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ---------- Micro Interaction Polish ---------- */
+button,
+input {
+    transition: all 0.2s ease;
+}
+
+/* ---------- Scrollbar Styling (Modern) ---------- */
+.auth-card::-webkit-scrollbar {
+    width: 6px;
+}
+
+.auth-card::-webkit-scrollbar-thumb {
+    background: var(--purple-300);
+    border-radius: 999px;
+}
+
+.dark-mode .auth-card::-webkit-scrollbar-thumb {
+    background: var(--purple-700);
+}

@@ -1,0 +1,166 @@
+/* =====================================================
+   KHARCHEE – PREMIUM PROFILE PAGE
+===================================================== */
+
+.profile-page {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-card {
+    width: 100%;
+    max-width: 500px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+}
+
+/* ================= AVATAR ================= */
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.2rem auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#9333ea,#7e22ce);
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 12px 30px rgba(147,51,234,0.3);
+}
+
+/* ================= NAME ROW ================= */
+
+.profile-name-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.profile-name-row h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+/* Pencil Button */
+.edit-icon {
+    background: var(--bg-tertiary);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.edit-icon:hover {
+    background: var(--purple-600);
+    color: white;
+}
+
+/* ================= EDIT SECTION ================= */
+
+.edit-name-section {
+    display: none;
+    margin-top: 1.5rem;
+    animation: fadeIn 0.25s ease;
+}
+
+.edit-name-section input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Professional Save Button */
+.save-btn {
+    width: 100%;
+    padding: 0.9rem;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    background: linear-gradient(135deg,#9333ea,#7e22ce);
+    color: white;
+    box-shadow: 0 10px 25px rgba(147,51,234,0.35);
+    transition: all 0.25s ease;
+}
+
+.save-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 35px rgba(147,51,234,0.45);
+}
+
+/* ================= INFO ================= */
+
+.profile-email,
+.profile-mobile {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.6rem;
+}
+
+.profile-message {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+    .profile-page {
+        padding: 1rem;
+    }
+
+    .profile-card {
+        padding: 2rem;
+    }
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================
+   FIX: PERFECT CENTER NAME BELOW AVATAR
+========================================== */
+
+.profile-name-row {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Keep name perfectly centered */
+.profile-name-row h2 {
+    margin: 0;
+    text-align: center;
+}
+
+/* Move pencil icon absolutely to right side */
+.edit-icon {
+    position: absolute;
+    right: 0;
+    transform: translateX(110%);
+}

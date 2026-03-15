@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile | kharchee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo-area">
+        <img src="assets/images/logo.png" class="logo" alt="kharchee logo">
+        <span class="site-name">kharchee</span>
+    </div>
+
+    <div class="auth-buttons">
+        <button onclick="window.location.href='dashboard.html'" class="btn btn-outline">
+            ← Back
+        </button>
+    </div>
+</header>
+
+<section class="profile-page">
+
+    <div class="profile-card">
+
+        <div class="profile-avatar" id="profileAvatar">
+            A
+        </div>
+
+        <div class="profile-name-row">
+            <h2 id="profileName">Loading...</h2>
+
+            <!-- Pencil Button -->
+            <button id="editNameBtn" class="edit-icon" title="Edit Name">
+                ✏️
+            </button>
+        </div>
+
+        <!-- Hidden Edit Input -->
+        <div class="edit-name-section" id="editSection">
+            <input type="text" id="editNameInput">
+            <button id="saveProfileBtn" class="save-btn">
+                Save Changes
+            </button>
+        </div>
+
+        <p class="profile-email" id="profileEmail"></p>
+        <p class="profile-mobile" id="profileMobile"></p>
+
+        <p id="profileMessage" class="profile-message"></p>
+
+    </div>
+
+</section>
+
+<script src="js/common.js"></script>
+<script src="js/profile.js"></script>
+
+</body>
+</html>

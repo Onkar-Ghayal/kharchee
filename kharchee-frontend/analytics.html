@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analytics | kharchee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/analytics.css">
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo-area">
+        <img src="assets/images/logo.png" class="logo" alt="kharchee logo">
+        <span class="site-name">kharchee</span>
+    </div>
+
+    <div class="auth-buttons">
+        <button onclick="window.location.href='dashboard.html'" class="btn btn-outline">
+            ← Back
+        </button>
+    </div>
+</header>
+
+<section class="analytics-page">
+
+    <div class="analytics-top">
+        <h2>Financial Analytics</h2>
+
+        <!-- 30 DAY FILTER TOGGLE -->
+        <div class="filter-toggle">
+            <button id="filterAll" class="filter-btn active">All Time</button>
+            <button id="filter30" class="filter-btn">Last 30 Days</button>
+        </div>
+    </div>
+
+    <!-- SUMMARY CARDS -->
+    <div class="analytics-summary">
+        <div class="analytics-card given">
+            <p>Total Given</p>
+            <h3 id="analyticsGiven">₹0</h3>
+        </div>
+
+        <div class="analytics-card taken">
+            <p>Total Taken</p>
+            <h3 id="analyticsTaken">₹0</h3>
+        </div>
+
+        <div class="analytics-card net">
+            <p>Net Balance</p>
+            <h3 id="analyticsNet">₹0</h3>
+        </div>
+    </div>
+
+    <!-- INSIGHT -->
+    <div class="insight-box" id="analyticsInsight">
+        Loading insights...
+    </div>
+
+    <!-- CHART GRID -->
+    <div class="charts-grid">
+
+        <div class="chart-container">
+            <h3>Overall Distribution</h3>
+            <canvas id="pieChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h3>Monthly Analysis</h3>
+            <canvas id="monthlyChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h3>Yearly Analysis</h3>
+            <canvas id="yearlyChart"></canvas>
+        </div>
+
+    </div>
+
+</section>
+
+<script src="js/common.js"></script>
+<script src="js/analytics.js"></script>
+
+</body>
+</html>

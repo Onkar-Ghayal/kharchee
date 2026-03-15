@@ -1,0 +1,735 @@
+/* =====================================================
+   KHARCHEE - HOME.CSS
+   Professional Landing Page
+   Mobile-First with Smooth Sections
+===================================================== */
+
+/* -------------------- HERO SECTION -------------------- */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--purple-700), var(--purple-900));
+    color: white;
+    text-align: center;
+    padding: var(--space-2xl) var(--space-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated background pattern */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    animation: float 20s ease-in-out infinite;
+}
+
+.hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+    animation: fadeUp var(--transition-slow);
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: var(--space-lg);
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin-bottom: var(--space-xl);
+    line-height: 1.6;
+    opacity: 0.95;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.hero-actions .btn {
+    min-width: 180px;
+    padding: 0.875rem 2rem;
+    font-size: var(--text-base);
+}
+
+.hero-actions .btn-fill {
+    background: white;
+    color: var(--purple-700);
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+}
+
+.hero-actions .btn-fill:hover {
+    background: var(--purple-100);
+    transform: translateY(-4px);
+}
+
+.hero-actions .btn-outline {
+    border: 2px solid white;
+    color: white;
+    background: transparent;
+}
+
+.hero-actions .btn-outline:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-4px);
+}
+
+/* -------------------- TRUST STRIP -------------------- */
+.trust-strip {
+    background: var(--accent-light);
+    color: var(--accent-primary);
+    text-align: center;
+    padding: var(--space-md);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    border-bottom: 1px solid var(--border-light);
+}
+
+/* -------------------- ABOUT SECTION -------------------- */
+.about {
+    padding: var(--space-2xl) var(--space-lg);
+    text-align: center;
+    background: var(--bg-primary);
+}
+
+.about h2 {
+    color: var(--text-primary);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: var(--space-lg);
+    position: relative;
+    display: inline-block;
+}
+
+.about h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--accent-primary);
+    border-radius: var(--radius-full);
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-secondary);
+    font-size: var(--text-lg);
+    line-height: 1.8;
+}
+
+/* -------------------- HOW IT WORKS -------------------- */
+.how-it-works {
+    padding: var(--space-2xl) var(--space-lg);
+    background: var(--bg-secondary);
+    text-align: center;
+}
+
+.how-it-works h2 {
+    color: var(--text-primary);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: var(--space-xl);
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step {
+    background: var(--bg-card);
+    padding: var(--space-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.step:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.step span {
+    display: inline-block;
+    width: 3.5rem;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    background: var(--accent-light);
+    color: var(--accent-primary);
+    border-radius: var(--radius-full);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+}
+
+.step h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-md);
+    font-size: var(--text-xl);
+}
+
+.step p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* -------------------- PREVIEW SECTION -------------------- */
+.preview {
+    padding: var(--space-2xl) var(--space-lg);
+    text-align: center;
+    background: var(--bg-primary);
+}
+
+.preview h2 {
+    color: var(--text-primary);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: var(--space-xl);
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.preview-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+}
+
+.preview-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.preview-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--accent-primary);
+}
+
+.preview-card p {
+    padding: var(--space-lg);
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* -------------------- FEATURES SECTION -------------------- */
+.features {
+    padding: var(--space-2xl) var(--space-lg);
+    background: var(--bg-secondary);
+    text-align: center;
+}
+
+.features h2 {
+    color: var(--text-primary);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: var(--space-xl);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature {
+    padding: var(--space-lg);
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+    border: 1px solid var(--border-light);
+}
+
+.feature:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-primary);
+}
+
+.feature {
+    font-size: var(--text-lg);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+}
+
+/* -------------------- CTA SECTION -------------------- */
+.cta-section {
+    padding: var(--space-2xl) var(--space-lg);
+    background: linear-gradient(135deg, var(--purple-700), var(--purple-900));
+    color: white;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: var(--space-lg);
+}
+
+.cta-section p {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-xl);
+    opacity: 0.95;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-section .btn-fill {
+    background: white;
+    color: var(--purple-700);
+    padding: 1rem 2.5rem;
+    font-size: var(--text-lg);
+}
+
+.cta-section .btn-fill:hover {
+    background: var(--purple-100);
+    transform: translateY(-4px);
+}
+
+/* -------------------- MOBILE OPTIMIZATIONS -------------------- */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 80vh;
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .about,
+    .how-it-works,
+    .preview,
+    .features {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .steps,
+    .preview-grid,
+    .feature-grid {
+        gap: var(--space-lg);
+    }
+
+    .step {
+        padding: var(--space-lg);
+    }
+
+    .preview-card img {
+        height: 160px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .feature {
+        padding: var(--space-md);
+        font-size: var(--text-sm);
+    }
+}
+
+/* -------------------- EXTRA SMALL DEVICES -------------------- */
+@media (max-width: 380px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* -------------------- ANIMATIONS -------------------- */
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(2%, 1%) rotate(0.5deg);
+    }
+    50% {
+        transform: translate(1%, 2%) rotate(1deg);
+    }
+    75% {
+        transform: translate(-1%, 1%) rotate(-0.5deg);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger animations for sections */
+.about { animation: fadeUp var(--transition-slow) 0.1s both; }
+.how-it-works { animation: fadeUp var(--transition-slow) 0.2s both; }
+.preview { animation: fadeUp var(--transition-slow) 0.3s both; }
+.features { animation: fadeUp var(--transition-slow) 0.4s both; }
+
+/* -------------------- DARK MODE SPECIFIC -------------------- */
+.dark-mode .hero {
+    background: linear-gradient(135deg, var(--purple-900), #000000);
+}
+
+.dark-mode .trust-strip {
+    background: var(--bg-secondary);
+    color: var(--accent-primary);
+}
+
+.dark-mode .step,
+.dark-mode .preview-card,
+.dark-mode .feature {
+    border: 1px solid var(--border-light);
+}
+
+.dark-mode .hero-actions .btn-fill {
+    background: var(--accent-primary);
+    color: white;
+}
+
+.dark-mode .hero-actions .btn-fill:hover {
+    background: var(--accent-hover);
+}
+
+/* =====================================================
+   PROFESSIONAL LIGHT MODE IMPROVEMENTS
+   (Paste at end of home.css)
+===================================================== */
+
+/* ---------- BETTER LIGHT MODE HERO ---------- */
+body:not(.dark-mode) .hero {
+    background: linear-gradient(135deg, #f9fafb, #eef2ff);
+    color: var(--text-primary);
+}
+
+body:not(.dark-mode) .hero::before {
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(147,51,234,0.08), transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(147,51,234,0.08), transparent 50%);
+}
+
+body:not(.dark-mode) .hero-content h1 {
+    text-shadow: none;
+}
+
+body:not(.dark-mode) .hero-actions .btn-outline {
+    border: 2px solid var(--purple-600);
+    color: var(--purple-600);
+}
+
+body:not(.dark-mode) .hero-actions .btn-outline:hover {
+    background: var(--purple-50);
+}
+
+/* ---------- BETTER SECTION CONTRAST ---------- */
+body:not(.dark-mode) .about {
+    background: #ffffff;
+}
+
+body:not(.dark-mode) .how-it-works {
+    background: #f8fafc;
+}
+
+body:not(.dark-mode) .features {
+    background: #f8fafc;
+}
+
+body:not(.dark-mode) .preview {
+    background: #ffffff;
+}
+
+/* ---------- PREMIUM CARD STYLE ---------- */
+body:not(.dark-mode) .step,
+body:not(.dark-mode) .preview-card,
+body:not(.dark-mode) .feature {
+    background: #ffffff;
+    border: 1px solid #eef2f7;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+body:not(.dark-mode) .step:hover,
+body:not(.dark-mode) .preview-card:hover,
+body:not(.dark-mode) .feature:hover {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* ---------- CLEAN CTA SECTION ---------- */
+body:not(.dark-mode) .cta-section {
+    background: linear-gradient(135deg, var(--purple-600), var(--purple-800));
+}
+
+/* ---------- TRUST STRIP IMPROVEMENT ---------- */
+body:not(.dark-mode) .trust-strip {
+    background: #f1f5f9;
+    color: var(--text-secondary);
+}
+
+/* ---------- SMOOTHER PAGE LOOK ---------- */
+body:not(.dark-mode) {
+    background: #f8fafc;
+}
+
+
+/* =====================================================
+   PROFESSIONAL BALANCED LIGHT MODE (NOT TOO WHITE)
+===================================================== */
+
+/* ---------- PAGE BACKGROUND ---------- */
+body:not(.dark-mode) {
+    background: #f3f4f9; /* soft grey-purple */
+}
+
+/* ---------- HERO (SOFT PREMIUM LOOK) ---------- */
+body:not(.dark-mode) .hero {
+    background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+    color: var(--text-primary);
+}
+
+body:not(.dark-mode) .hero::before {
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(147,51,234,0.15), transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(147,51,234,0.15), transparent 50%);
+}
+
+/* Buttons */
+body:not(.dark-mode) .hero-actions .btn-fill {
+    background: var(--purple-600);
+    color: white;
+}
+
+body:not(.dark-mode) .hero-actions .btn-outline {
+    border: 2px solid var(--purple-600);
+    color: var(--purple-600);
+}
+
+/* ---------- SECTION BACKGROUNDS ---------- */
+body:not(.dark-mode) .about {
+    background: transparent;
+}
+
+body:not(.dark-mode) .how-it-works {
+    background: #eef2ff; /* soft tint */
+}
+
+body:not(.dark-mode) .features {
+    background: #eef2ff;
+}
+
+body:not(.dark-mode) .preview {
+    background: transparent;
+}
+
+/* ---------- PREMIUM CARD DESIGN ---------- */
+body:not(.dark-mode) .step,
+body:not(.dark-mode) .preview-card,
+body:not(.dark-mode) .feature {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(147,51,234,0.08);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.05);
+}
+
+/* Hover feel */
+body:not(.dark-mode) .step:hover,
+body:not(.dark-mode) .preview-card:hover,
+body:not(.dark-mode) .feature:hover {
+    box-shadow: 0 24px 50px rgba(0,0,0,0.08);
+}
+
+/* ---------- TRUST STRIP ---------- */
+body:not(.dark-mode) .trust-strip {
+    background: #ede9fe;
+    color: var(--purple-700);
+}
+
+/* ---------- CTA SECTION ---------- */
+body:not(.dark-mode) .cta-section {
+    background: linear-gradient(135deg, var(--purple-600), var(--purple-800));
+}
+
+/* Reduce heavy animations on low-power mobile devices */
+@media (max-width: 768px){
+    .step:hover,
+    .preview-card:hover,
+    .feature:hover{
+        transform: none;
+    }
+
+    .hero::before{
+        animation: none;
+    }
+}
+
+
+/* =====================================================
+   🚀 PREMIUM HOME ENHANCEMENTS (SAFE APPEND)
+   No existing code modified
+===================================================== */
+
+/* ---------- Smooth Page Reveal ---------- */
+.hero,
+.about,
+.how-it-works,
+.preview,
+.features,
+.cta-section {
+    animation: sectionFadeUp 0.6s ease both;
+}
+
+@keyframes sectionFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Softer Card Depth (Premium Feel) ---------- */
+.step,
+.preview-card,
+.feature {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* ---------- Subtle Card Border Glow on Hover ---------- */
+@media (hover:hover) {
+    .step:hover,
+    .preview-card:hover,
+    .feature:hover {
+        border-color: rgba(147, 51, 234, 0.3);
+    }
+}
+
+/* ---------- Better Button Micro-Interaction ---------- */
+.btn,
+.btn-fill,
+.btn-outline {
+    transition: all 0.25s ease;
+}
+
+@media (hover:hover) {
+    .btn:hover,
+    .btn-fill:hover,
+    .btn-outline:hover {
+        letter-spacing: 0.3px;
+    }
+}
+
+/* ---------- Hero Subtle Overlay for Depth ---------- */
+body:not(.dark-mode) .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.15) 0%,
+        rgba(255,255,255,0) 60%
+    );
+    pointer-events: none;
+}
+
+/* ---------- Cleaner Section Spacing on Large Screens ---------- */
+@media (min-width: 1400px) {
+    .hero,
+    .about,
+    .how-it-works,
+    .preview,
+    .features,
+    .cta-section {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+}
+
+/* ---------- Trust Strip Subtle Animation ---------- */
+.trust-strip {
+    animation: fadePulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes fadePulse {
+    from { opacity: 0.85; }
+    to { opacity: 1; }
+}
+
+/* ---------- CTA Button Elevation ---------- */
+@media (hover:hover) {
+    .cta-section .btn-fill:hover {
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+}
+
+/* ---------- Modern Scrollbar ---------- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--purple-300);
+    border-radius: 999px;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+    background: var(--purple-700);
+}
+
+/* ---------- Reduced Motion Support ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .hero,
+    .about,
+    .how-it-works,
+    .preview,
+    .features,
+    .cta-section {
+        animation: none !important;
+    }
+}
