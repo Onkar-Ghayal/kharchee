@@ -55,6 +55,14 @@ app.use(cors({
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Kharchee API is running");
+});
+
+app.get("/api/health", (req, res) => {
+  res.json({ status: "OK", message: "Server running" });
+});
+
 /* ================= ROUTES ================= */
 
 app.use("/api/auth", require("./routes/authRoutes"));
