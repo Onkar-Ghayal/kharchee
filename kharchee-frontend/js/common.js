@@ -4,9 +4,9 @@
 
 // ✅ GLOBAL CONFIG (ONLY HERE)
 const API_BASE_URL =
-    window.location.hostname === "localhost"
-        ? "http://localhost:5000/api"
-        : "https://kharchee.onrender.com/api";
+  window.location.hostname === "localhost"
+    ? "http://localhost:5000/api"
+    : "https://kharchee-api.onrender.com/api";
 
 /* ===============================
    TOKEN HELPERS
