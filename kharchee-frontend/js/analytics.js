@@ -291,6 +291,16 @@ function renderWeeklyChart(data) {
     });
 }
 
+const chartTitle = document.getElementById("dynamicChartTitle");
+
+document.getElementById("filterAll").addEventListener("click", () => {
+    chartTitle.innerText = "Yearly Analysis";
+});
+
+document.getElementById("filter30").addEventListener("click", () => {
+    chartTitle.innerText = "Weekly Analysis";
+});
+
 /* ================= INIT ================= */
 
 document.addEventListener("DOMContentLoaded", fetchFriends);
